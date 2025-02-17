@@ -6,17 +6,33 @@
     <title>Idoit Gaming Olympic - Esports Organization</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
         body {
             background: url('background.png') no-repeat center center/cover;
             font-family: 'Orbitron', sans-serif;
             color: white;
             text-align: center;
-            overflow-x: hidden;
+            animation: fadeIn 2s ease-in;
         }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         .logo {
             width: 200px;
             margin-top: 20px;
+            animation: pulse 2s infinite;
         }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
@@ -28,10 +44,18 @@
             font-weight: bold;
             border-radius: 10px;
             transition: 0.3s;
+            animation: glow 1.5s infinite alternate;
         }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #ff0000; }
+            to { box-shadow: 0 0 20px #ff7300; }
+        }
+        
         .cta-button:hover {
             background: linear-gradient(90deg, #ff7300, #ff0000);
         }
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -40,43 +64,52 @@
             border-radius: 10px;
             display: inline-block;
         }
+
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
+            transition: 0.3s;
         }
+
+        nav ul li a:hover {
+            color: #ff7300;
+        }
+        
         section {
             padding: 50px 20px;
+            animation: slideIn 1.5s ease-in-out;
         }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
         footer {
             padding: 20px;
             background: rgba(0, 0, 0, 0.9);
             margin-top: 20px;
             font-weight: bold;
         }
+        
         h2 {
             font-size: 30px;
             text-transform: uppercase;
             text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.8);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .animated {
-            animation: fadeIn 2s ease-in-out;
-        }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Idoit Gaming Olympic Logo" class="logo animated">
-        <h1 class="animated">Idoit Gaming Olympic</h1>
+        <img src="logo.png" alt="Idoit Gaming Olympic Logo" class="logo">
+        <h1>Idoit Gaming Olympic</h1>
         <nav>
             <ul>
                 <li><a href="#about">About Us</a></li>
@@ -90,9 +123,9 @@
     </header>
     
     <section id="hero">
-        <h2 class="animated">Welcome to the Ultimate Free Fire Esports Arena</h2>
-        <p class="animated">Join the battle, showcase your skills, and win big!</p>
-        <a href="#registration" class="cta-button animated">Register Now</a>
+        <h2>Welcome to the Ultimate Free Fire Esports Arena</h2>
+        <p>Join the battle, showcase your skills, and win big!</p>
+        <a href="#registration" class="cta-button">Register Now</a>
     </section>
     
     <section id="about">
